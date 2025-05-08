@@ -1,0 +1,1896 @@
+Delivered-To: shraddhasanjayladdha36206@iisuniv.ac.in
+Received: by 2002:a05:6124:5995:b0:3d9:cb64:aac2 with SMTP id fc21csp3829649vlb;
+        Wed, 7 May 2025 10:20:48 -0700 (PDT)
+X-Received: by 2002:a5d:6990:0:b0:3a0:a0d1:1131 with SMTP id ffacd0b85a97d-3a0b4a06031mr2839114f8f.7.1746638448032;
+        Wed, 07 May 2025 10:20:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746638448; cv=none;
+        d=google.com; s=arc-20240605;
+        b=UBn7cO3ngoQ3uO87w4DXEaVw0xQ3LXyAwH+jfmgYoFBJ15GaREw1iCdJuacG9xdi+g
+         6aYRs7j2GfzTCKNSqJfmxXf+Fm173I4eDivsgBq+4GVmoTf0nwYSU0klh8ks6c3jzg32
+         Ymd0e1c3iJxRm8NXVZ8+spCEo518Z0BA+wD/iuBAiIkJaqVt+tZ7K+y22BSCpQVB4m9P
+         DtdVOEKuRl36Qm05Hnx0Vn62MvSCNnovpZoOz69ruDlWG2zlrgrq6MFsM1TqKJeqaDEu
+         rBoFFg0yKq0zXhW3032id5evzqEFsw9zOMgqVFmPPejsq4McOHelSJulmXKz1F5GmIw3
+         JSXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=mA+DjcG0k3Mv42/sTlP6K4dNxuk1oKesjZcSi1LtSKk=;
+        fh=8qMO/WsREgB2Nxxmn/w84AQU2DcCo2V0Db07Sv3OJqI=;
+        b=YG0sJC/GOLzgH/YVc3fluBi0Wndl720D4rmQkwYnXD6+SrkGHM8oowgDKYlCjy0kQf
+         Qr+OqxNBq+cY+nxklN1uHHJlolNaTaiRwG2cJlc6bw6ac5pMNkshRjYcD6NtTRWcDiLE
+         csxXs8kSYuZYVklEqE0Q7iQPak7rBGkbevg5kzQBV66ihQbY982wsUYmPMwF/ByYkhRS
+         RXJceY35StpU1x8piEu7Jn2v3psmpwVIZFvZhZIilx3gUJZzVkyVLc5f817JGaINIpI8
+         47iupTOmymsbFwUUWliot1vC3RrTxsf+xDJmXPoMFtgNPFd5Fweq4+SkqR5mPdjNC5JD
+         DM5A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=DpYmcpdl;
+       spf=pass (google.com: domain of vsprpk@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vsprpk@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@iisuniv.ac.in
+Return-Path: <vsprpk@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 5b1f17b1804b1-441b8a38d9bsor53574735e9.10.2025.05.07.10.20.47
+        for <shraddhasanjayladdha36206@iisuniv.ac.in>
+        (Google Transport Security);
+        Wed, 07 May 2025 10:20:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of vsprpk@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=DpYmcpdl;
+       spf=pass (google.com: domain of vsprpk@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vsprpk@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@iisuniv.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1746638447; x=1747243247; darn=iisuniv.ac.in;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=mA+DjcG0k3Mv42/sTlP6K4dNxuk1oKesjZcSi1LtSKk=;
+        b=DpYmcpdlJCqdhK09+2MeJWqjjPldBKYOKHTUhjNzcjWsonQrXZxKI7m9BRJwV/CqJe
+         8CJS+uPpSwreKIjxtPhES5lwV+0skoaRNpszEEng03Rx3cKxmWuWjAQCr1CCABLB7UjX
+         apmE7H5fwfTt6Nv5riBqDbm9+etCyJ99Ps2sWCSMr78DqdWeoTrVjmEPbCET+H6D3ljd
+         MJeujKM+rU02FHJDEER4EzrwWs9VgDE3fkVpTZI9eCaYbbkaGoEI7TPtsrrsLmeJvNAg
+         QxC1z+Daj+DPXpTCXhG+48mS+lFbVa0a/TDwVVFbxME434BKLijCh2DgHeIbhXrc2jMf
+         bnYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1746638447; x=1747243247;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mA+DjcG0k3Mv42/sTlP6K4dNxuk1oKesjZcSi1LtSKk=;
+        b=KRUrJjfbEWoZaRLOhs4204pJj8Hy0bNY38PNH/PHTr4PhCyB/yYceSDphBVXJiryns
+         JPFdGayoS4+x9wjyIFdWV7llcrLjw7YMJG/nlLbiUpk2R9ZzJxcdIV5+8SKEqnsO/bet
+         02idHGEHuC5FLXsZVjUrULrcKbMfgO0MDApriH4jZi8LFLDf3YCF/4cleGox0AawTAua
+         jvQaxmENA2g4Ff66T4kptcYP2Dx83W3ZFHMYnDpXTVPxN/bmKFwzL5XSHS9/okw/1khL
+         QkzADLlwUEze0SUYPRJESsFrajZLngvEeMbNJLYW4ZJ4dW4s8HQcZaujvUzD6s5xZWdc
+         UKRQ==
+X-Gm-Message-State: AOJu0YzEF23aYqBaZGbJJiw/fhVNmu1Lxb9fMw03kG6MI96aCpncw/li
+	5JLkqy2xBu/eXUEqmCqEr6mYCNPQTap0pK7VzwX2gmoMba6PjBK1wsVmvcwfP7/VB26ynYb0Q4Y
+	kUAmd2VIXW2IM3RuZCQcLOPFYf9AWNhoy6J4=
+X-Gm-Gg: ASbGncvteddNN9V+daCvwf2NHqfWbJsN7SxHlj6YgJXxhmeYq3q4Qp/zqvGCfRNslob
+	4mRcc6lC1yLOojrZoUS4pJ1e7wfPaHBnF7lc1AdkXKBdc6H/Lg7sy9p1YIjVK/4ceg720H4DW0G
+	tRlTHd0Dd10Is1IM7kdy98CfgZd9rzNZsOWFwX8lS3upKfTrLpThUFw+OTxvpPorVExg==
+X-Google-Smtp-Source: AGHT+IGfSaPgD5r7Mrm1voeXHJxO3fd5C2zHEYmTWmbumf0sF03uMzcbj++LjdNdQQGhc7wm8PmcOkbkNqL4OhI0zxw=
+X-Received: by 2002:a05:600c:3ca1:b0:43c:ec28:d31b with SMTP id
+ 5b1f17b1804b1-441d44c457emr42913685e9.10.1746638446371; Wed, 07 May 2025
+ 10:20:46 -0700 (PDT)
+MIME-Version: 1.0
+From: Pooja <vsprpk@gmail.com>
+Date: Wed, 7 May 2025 22:50:34 +0530
+X-Gm-Features: ATxdqUFZFmFZZK-UdQW8lOvWExi1Dq-TVWo_UaFQBofuyRU5kf1Wix2yM3Dd7d4
+Message-ID: <CAC3q3ggkuHY8K4s7mt3dtPsc10jHqDBCkzKpKZbtxnnzwnMhDg@mail.gmail.com>
+Subject: updated code
+To: shraddhasanjayladdha36206@iisuniv.ac.in
+Content-Type: multipart/alternative; boundary="00000000000025aaba06348ef43a"
+
+--00000000000025aaba06348ef43a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8" />
+    <title>Medical Recommendation Chatbot</title>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1" />
+    <script src=3D"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></
+script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #app {
+            max-width: 600px;
+            margin: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 90vh;
+        }
+        header {
+            background-color: #4b6cb7;
+            background-image: linear-gradient(315deg, #4b6cb7 0%, #182848
+74%);
+            padding: 1rem 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            user-select: none;
+        }
+        #chat {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem 1.5rem;
+            box-sizing: border-box;
+        }
+        .message {
+            margin-bottom: 1rem;
+            max-width: 80%;
+            line-height: 1.4;
+            font-size: 1rem;
+            word-wrap: break-word;
+            border-radius: 16px;
+            padding: 0.6rem 1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            white-space: pre-line;
+        }
+        .user {
+            background: #daf1fd;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .bot {
+            background: #e4e9f2;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+            color: #222;
+            font-weight: 600;
+        }
+        form {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid #ddd;
+            background: #f8f9fb;
+        }
+        input[type=3Dtext] {
+            flex-grow: 1;
+            border: 1px solid #bbb;
+            border-radius: 25px;
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s border-color ease;
+        }
+        input[type=3Dtext]:focus {
+            border-color: #4b6cb7;
+            box-shadow: 0 0 8px #4b6cb7aa;
+        }
+        button {
+            background: #4b6cb7;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0 1.5rem;
+            margin-left: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover:not(:disabled) {
+            background: #365298;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        @media (max-width: 600px) {
+            #app {
+                height: 100vh;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            #chat {
+                padding: 0.8rem 1rem;
+            }
+            input[type=3Dtext] {
+                font-size: 1rem;
+            }
+            button {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id=3D"app">
+        <header>Medical Recommendation Chatbot</header>
+        <div id=3D"chat" aria-live=3D"polite" aria-atomic=3D"false"></div>
+        <form id=3D"inputForm" aria-label=3D"User input form">
+            <input type=3D"text" id=3D"userInput" autocomplete=3D"off" plac=
+eholder
+=3D"Describe your symptoms or ask about diseases..." required maxlength=3D"=
+500"
+aria-describedby=3D"desc"/>
+            <button type=3D"submit" id=3D"sendBtn">Send</button>
+        </form>
+    </div>
+    <script>
+        // Symptom keywords dictionary
+        const symptomKeywords =3D {
+            "headache": ["headache", "head pain"],
+            "fever": ["fever", "high temperature"],
+            "body ache": ["body ache", "muscle pain", "general pain"],
+            "cough": ["cough", "coughing"],
+            "dry cough": ["dry cough", "non-productive cough"],
+            "productive cough": ["productive cough", "cough with phlegm"],
+            "sore throat": ["sore throat", "throat pain", "scratchy throat"
+],
+            "stuffy nose": ["stuffy nose", "nasal congestion", "blocked
+nose"],
+            "nasal congestion": ["nasal congestion", "blocked nose"]
+        };
+
+        // Basic dataset for demo - since no server-side reading is
+possible,
+        // emulating the medical data as a JS array of objects here for
+demo purposes.
+        const medicalData =3D [
+            { Disease: "flu", Medicine: "Oseltamivir" },
+            { Disease: "cold", Medicine: "Antihistamines or decongestants"
+},
+            { Disease: "headache", Medicine: "Paracetamol or Ibuprofen" },
+            { Disease: "strep throat", Medicine: "Antibiotics prescribed by
+a doctor" },
+            { Disease: "flu", Medicine: "Oseltamivir, Paracetamol for fever=
+"
+},
+            { Disease: "cold", Medicine: "Antihistamines like Cetirizine,
+Decongestants like Pseudoephedrine" },
+            { Disease: "headache", Medicine: "Paracetamol or Ibuprofen" },
+            { Disease: "strep throat", Medicine: "Penicillin or Amoxicillin
+(as prescribed)" },
+            { Disease: "diarrhea", Medicine: "ORS solution, Loperamide for
+symptom relief" },
+            { Disease: "constipation", Medicine: "Laxatives like Bisacodyl
+or fiber supplements" },
+            { Disease: "acidity", Medicine: "Antacids like Ranitidine or
+Omeprazole" },
+            { Disease: "indigestion", Medicine: "Antacids, Digestive
+enzymes" },
+            { Disease: "asthma", Medicine: "Inhalers with Salbutamol or
+corticosteroids" },
+            { Disease: "hypertension", Medicine: "Amlodipine, Lisinopril,
+or Losartan" },
+            { Disease: "diabetes", Medicine: "Metformin or insulin
+(depending on type)" },
+            { Disease: "migraine", Medicine: "Sumatriptan, Naproxen" },
+            { Disease: "allergy", Medicine: "Loratadine, Cetirizine" },
+            { Disease: "back pain", Medicine: "Ibuprofen, Muscle relaxants
+like Cyclobenzaprine" },
+            { Disease: "urinary tract infection", Medicine: "Nitrofurantoin=
+,
+Ciprofloxacin (as prescribed)" },
+            { Disease: "skin rash", Medicine: "Topical corticosteroids or
+antihistamines" },
+            { Disease: "eczema", Medicine: "Moisturizers, Hydrocortisone
+cream" },
+            { Disease: "acne", Medicine: "Benzoyl peroxide, Salicylic acid,
+Clindamycin gel" },
+            { Disease: "bronchitis", Medicine: "Cough syrups, Amoxicillin
+if bacterial" },
+            { Disease: "tonsillitis", Medicine: "Paracetamol, Antibiotics
+if bacterial" },
+            { Disease: "sinusitis", Medicine: "Decongestants, Saline nasal
+spray, Amoxicillin if bacterial" },
+            { Disease: "dengue", Medicine: "Paracetamol for fever,
+Hydration, No NSAIDs" },
+            { Disease: "malaria", Medicine: "Chloroquine, Artemisinin-based
+combinations (ACT)" },
+            { Disease: "typhoid", Medicine: "Cefixime, Azithromycin (as
+prescribed)" },
+            { Disease: "chickenpox", Medicine: "Calamine lotion, Acyclovir
+in severe cases" },
+            { Disease: "measles", Medicine: "Paracetamol, Vitamin A
+supplements" },
+            { Disease: "hepatitis A", Medicine: "Supportive care, Rest,
+Hydration" },
+            { Disease: "covid-19", Medicine: "Paracetamol for fever,
+supportive care, consult doctor" },
+            { Disease: "pink eye", Medicine: "Lubricant eye drops,
+Antibiotic drops for bacterial conjunctivitis" }
+        ];
+
+        // Extract symptoms from user input
+        function extractSymptoms(text) {
+            const lowerText =3D text.toLowerCase();
+            return Object.keys(symptomKeywords).filter(symptom =3D>
+                symptomKeywords[symptom].some(keyword =3D> lowerText.includ=
+es(
+keyword))
+            );
+        }
+
+        // Recommend OTC medicines
+        function recommendOTC(symptoms) {
+            const rec =3D [];
+            if (symptoms.some(sym =3D> ["headache", "fever", "body ache"].
+includes(sym))) {
+                rec.push("Consider Paracetamol or Ibuprofen for pain and
+fever.");
+            }
+            if (symptoms.includes("cough")) {
+                if (symptoms.includes("dry cough")) {
+                    rec.push("Try a suppressant like Dextromethorphan.");
+                } else if (symptoms.includes("productive cough")) {
+                    rec.push("Try an expectorant like Guaifenesin.");
+                } else {
+                    rec.push("For cough relief, consider a cough syrup.");
+                }
+            }
+            if (symptoms.includes("sore throat")) {
+                rec.push("Lozenges or throat sprays may help.");
+            }
+            if (symptoms.some(sym =3D> ["stuffy nose", "nasal congestion"].
+includes(sym))) {
+                rec.push("Use nasal decongestant sprays or Pseudoephedrine
+tablets.");
+            }
+            return rec.length > 0 ? rec.join("\n") : null;
+        }
+
+        // Check if user input matches a disease in the dataset
+        function checkDatasetDisease(text) {
+            const input =3D text.toLowerCase();
+            for (const entry of medicalData) {
+                if (entry.Disease && entry.Medicine) {
+                    if (input.includes(entry.Disease.toLowerCase())) {
+                        return `For ${entry.Disease}, consider: ${entry.
+Medicine}`;
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Chat history - array of {speaker: "user" | "bot", text: ""}
+        let chatHistory =3D [];
+
+        // Function to add message to chat UI
+        function addMessage(speaker, text) {
+            chatHistory.push({speaker, text});
+            const chat =3D document.getElementById("chat");
+            const messageDiv =3D document.createElement("div");
+            messageDiv.classList.add("message", speaker);
+            messageDiv.textContent =3D text;
+            chat.appendChild(messageDiv);
+            chat.scrollTop =3D chat.scrollHeight;
+        }
+
+        // Function to sanitize user input
+        function sanitizeInput(text) {
+            return text.trim();
+        }
+
+        // Function for generating bot response synchronously
+        // Since we can't call transformers locally here,
+        // We'll simulate conversational responses with some predefined
+fallback
+        function generateBotResponse(userText) {
+            // First check dataset
+            const datasetRec =3D checkDatasetDisease(userText);
+            if (datasetRec) {
+                return `Bot (Dataset): ${datasetRec}`;
+            }
+
+            // Extract symptoms and recommend OTC
+            const symptoms =3D extractSymptoms(userText);
+            const otcRec =3D recommendOTC(symptoms);
+            if (otcRec) {
+                return `Bot (OTC): ${otcRec}`;
+            }
+
+            // Handle thanks / thank you
+            if (/^thanks?$|thank you/i.test(userText.trim())) {
+                return "Bot: You're welcome! Stay safe. =F0=9F=98=8A";
+            }
+
+            // Fallback "chatty" response
+            // Some simple canned responses for demo:
+            const lower =3D userText.toLowerCase();
+            if (lower.includes("hello") || lower.includes("hi")) {
+                return "Bot: Hello! How can I assist you today?";
+            }
+            if (lower.includes("help") || lower.includes("support")) {
+                return "Bot: Sure, ask me about common symptoms or
+diseases!";
+            }
+            // Default fallback
+            return "Bot: Sorry, I couldn't find specific recommendations.
+Please consult a healthcare professional.";
+        }
+
+        // Event handler for form submit
+        document.getElementById("inputForm").addEventListener("submit",
+function(event) {
+            event.preventDefault();
+            const inputField =3D document.getElementById("userInput");
+            let userText =3D sanitizeInput(inputField.value);
+            if (!userText) return;
+
+            addMessage("user", userText);
+
+            // Generate bot reply (simulated async for better UX)
+            setTimeout(() =3D> {
+                const botResponse =3D generateBotResponse(userText);
+                addMessage("bot", botResponse);
+            }, 300);
+
+            inputField.value =3D "";
+            inputField.focus();
+        });
+
+    </script>
+</body>
+</html>
+
+--00000000000025aaba06348ef43a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div style=3D"color:rgb(204,204,204);background-color:rgb(=
+31,31,31);font-family:Consolas,&quot;Courier New&quot;,monospace;font-size:=
+14px;line-height:19px;white-space:pre"><div><span style=3D"color:rgb(128,12=
+8,128)">&lt;!</span><span style=3D"color:rgb(86,156,214)">DOCTYPE</span> <s=
+pan style=3D"color:rgb(156,220,254)">html</span><span style=3D"color:rgb(12=
+8,128,128)">&gt;</span></div><div><span style=3D"color:rgb(128,128,128)">&l=
+t;</span><span style=3D"color:rgb(86,156,214)">html</span> <span style=3D"c=
+olor:rgb(156,220,254)">lang</span>=3D<span style=3D"color:rgb(206,145,120)"=
+>&quot;en&quot;</span><span style=3D"color:rgb(128,128,128)">&gt;</span></d=
+iv><div><span style=3D"color:rgb(128,128,128)">&lt;</span><span style=3D"co=
+lor:rgb(86,156,214)">head</span><span style=3D"color:rgb(128,128,128)">&gt;=
+</span></div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;=
+</span><span style=3D"color:rgb(86,156,214)">meta</span> <span style=3D"col=
+or:rgb(156,220,254)">charset</span>=3D<span style=3D"color:rgb(206,145,120)=
+">&quot;UTF-8&quot;</span> <span style=3D"color:rgb(128,128,128)">/&gt;</sp=
+an></div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;</sp=
+an><span style=3D"color:rgb(86,156,214)">title</span><span style=3D"color:r=
+gb(128,128,128)">&gt;</span>Medical Recommendation Chatbot<span style=3D"co=
+lor:rgb(128,128,128)">&lt;/</span><span style=3D"color:rgb(86,156,214)">tit=
+le</span><span style=3D"color:rgb(128,128,128)">&gt;</span></div><div>=C2=
+=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;</span><span style=3D=
+"color:rgb(86,156,214)">meta</span> <span style=3D"color:rgb(156,220,254)">=
+name</span>=3D<span style=3D"color:rgb(206,145,120)">&quot;viewport&quot;</=
+span> <span style=3D"color:rgb(156,220,254)">content</span>=3D<span style=
+=3D"color:rgb(206,145,120)">&quot;width=3Ddevice-width, initial-scale=3D1&q=
+uot;</span> <span style=3D"color:rgb(128,128,128)">/&gt;</span></div><div>=
+=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;</span><span style=
+=3D"color:rgb(86,156,214)">script</span><span style=3D"color:rgb(212,212,21=
+2)"> </span><span style=3D"color:rgb(156,220,254)">src</span><span style=3D=
+"color:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(206,145,120)">&=
+quot;<a href=3D"https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">https=
+://cdn.jsdelivr.net/npm/axios/dist/axios.min.js</a>&quot;</span><span style=
+=3D"color:rgb(128,128,128)">&gt;&lt;/</span><span style=3D"color:rgb(86,156=
+,214)">script</span><span style=3D"color:rgb(128,128,128)">&gt;</span></div=
+><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;</span><span=
+ style=3D"color:rgb(86,156,214)">style</span><span style=3D"color:rgb(128,1=
+28,128)">&gt;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">body=
+</span><span style=3D"color:rgb(212,212,212)"> {</span></div><div><span sty=
+le=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </s=
+pan><span style=3D"color:rgb(156,220,254)">font-family</span><span style=3D=
+"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)">&#=
+39;Segoe UI&#39;</span><span style=3D"color:rgb(212,212,212)">, </span><spa=
+n style=3D"color:rgb(206,145,120)">Tahoma</span><span style=3D"color:rgb(21=
+2,212,212)">, Geneva, </span><span style=3D"color:rgb(206,145,120)">Verdana=
+</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color=
+:rgb(206,145,120)">sans-serif</span><span style=3D"color:rgb(212,212,212)">=
+;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">back=
+ground</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D=
+"color:rgb(220,220,170)">linear-gradient</span><span style=3D"color:rgb(212=
+,212,212)">(</span><span style=3D"color:rgb(181,206,168)">135deg</span><spa=
+n style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,14=
+5,120)">#74ebd5</span><span style=3D"color:rgb(212,212,212)">, </span><span=
+ style=3D"color:rgb(206,145,120)">#ACB6E5</span><span style=3D"color:rgb(21=
+2,212,212)">);</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">margin</span><span style=3D"color:rgb(212,212,212)">: </span><spa=
+n style=3D"color:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212=
+,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254=
+)">padding</span><span style=3D"color:rgb(212,212,212)">: </span><span styl=
+e=3D"color:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)"=
+>;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">d=
+isplay</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D=
+"color:rgb(206,145,120)">flex</span><span style=3D"color:rgb(212,212,212)">=
+;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">flex=
+-direction</span><span style=3D"color:rgb(212,212,212)">: </span><span styl=
+e=3D"color:rgb(206,145,120)">column</span><span style=3D"color:rgb(212,212,=
+212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254=
+)">height</span><span style=3D"color:rgb(212,212,212)">: </span><span style=
+=3D"color:rgb(181,206,168)">100vh</span><span style=3D"color:rgb(212,212,21=
+2)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">#=
+app</span><span style=3D"color:rgb(212,212,212)"> {</span></div><div><span =
+style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+</span><span style=3D"color:rgb(156,220,254)">max-width</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)"=
+>600px</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><spa=
+n style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(156,220,254)">margin</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)"=
+>auto</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span=
+ style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ </span><span style=3D"color:rgb(156,220,254)">flex-grow</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)"=
+>1</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span st=
+yle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </=
+span><span style=3D"color:rgb(156,220,254)">display</span><span style=3D"co=
+lor:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)">flex<=
+/span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </spa=
+n><span style=3D"color:rgb(156,220,254)">flex-direction</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)"=
+>column</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><sp=
+an style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(156,220,254)">background</span><span st=
+yle=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,12=
+0)">white</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><=
+span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(156,220,254)">box-shadow</span><span=
+ style=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206=
+,168)">0</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(181,206,168)">8px</span><span style=3D"color:rgb(212,212,212)=
+"> </span><span style=3D"color:rgb(181,206,168)">24px</span><span style=3D"=
+color:rgb(212,212,212)"> </span><span style=3D"color:rgb(220,220,170)">rgba=
+</span><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:=
+rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)">,</span><s=
+pan style=3D"color:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,2=
+12,212)">,</span><span style=3D"color:rgb(181,206,168)">0</span><span style=
+=3D"color:rgb(212,212,212)">,</span><span style=3D"color:rgb(181,206,168)">=
+0.2</span><span style=3D"color:rgb(212,212,212)">);</span></div><div><span =
+style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+</span><span style=3D"color:rgb(156,220,254)">border-radius</span><span sty=
+le=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168=
+)">12px</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><sp=
+an style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(156,220,254)">overflow</span><span styl=
+e=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)=
+">hidden</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><s=
+pan style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(156,220,254)">height</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)"=
+>90vh</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span=
+ style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div=
+><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </=
+span><span style=3D"color:rgb(215,186,125)">header</span><span style=3D"col=
+or:rgb(212,212,212)"> {</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:=
+rgb(156,220,254)">background-color</span><span style=3D"color:rgb(212,212,2=
+12)">: </span><span style=3D"color:rgb(206,145,120)">#4b6cb7</span><span st=
+yle=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(156,220,254)">background-image</span><span style=3D"color:rgb=
+(212,212,212)">: </span><span style=3D"color:rgb(220,220,170)">linear-gradi=
+ent</span><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"col=
+or:rgb(181,206,168)">315deg</span><span style=3D"color:rgb(212,212,212)">, =
+</span><span style=3D"color:rgb(206,145,120)">#4b6cb7</span><span style=3D"=
+color:rgb(212,212,212)"> </span><span style=3D"color:rgb(181,206,168)">0%</=
+span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:r=
+gb(206,145,120)">#182848</span><span style=3D"color:rgb(212,212,212)"> </sp=
+an><span style=3D"color:rgb(181,206,168)">74%</span><span style=3D"color:rg=
+b(212,212,212)">);</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(1=
+56,220,254)">padding</span><span style=3D"color:rgb(212,212,212)">: </span>=
+<span style=3D"color:rgb(181,206,168)">1rem</span><span style=3D"color:rgb(=
+212,212,212)"> </span><span style=3D"color:rgb(181,206,168)">1.5rem</span><=
+span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span=
+ style=3D"color:rgb(156,220,254)">color</span><span style=3D"color:rgb(212,=
+212,212)">: </span><span style=3D"color:rgb(206,145,120)">white</span><span=
+ style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:r=
+gb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span sty=
+le=3D"color:rgb(156,220,254)">font-size</span><span style=3D"color:rgb(212,=
+212,212)">: </span><span style=3D"color:rgb(181,206,168)">1.5rem</span><spa=
+n style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:=
+rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(156,220,254)">font-weight</span><span style=3D"color:rgb(2=
+12,212,212)">: </span><span style=3D"color:rgb(181,206,168)">700</span><spa=
+n style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:=
+rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(156,220,254)">text-align</span><span style=3D"color:rgb(21=
+2,212,212)">: </span><span style=3D"color:rgb(206,145,120)">center</span><s=
+pan style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"colo=
+r:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span =
+style=3D"color:rgb(156,220,254)">user-select</span><span style=3D"color:rgb=
+(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)">none</span><=
+span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span s=
+tyle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(215,186,125)">#chat</span><span style=3D"color:rgb(212,212=
+,212)"> {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,=
+254)">flex-grow</span><span style=3D"color:rgb(212,212,212)">: </span><span=
+ style=3D"color:rgb(181,206,168)">1</span><span style=3D"color:rgb(212,212,=
+212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254=
+)">overflow-y</span><span style=3D"color:rgb(212,212,212)">: </span><span s=
+tyle=3D"color:rgb(206,145,120)">auto</span><span style=3D"color:rgb(212,212=
+,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254=
+)">padding</span><span style=3D"color:rgb(212,212,212)">: </span><span styl=
+e=3D"color:rgb(181,206,168)">1rem</span><span style=3D"color:rgb(212,212,21=
+2)"> </span><span style=3D"color:rgb(181,206,168)">1.5rem</span><span style=
+=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212=
+,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(156,220,254)">box-sizing</span><span style=3D"color:rgb(212,212,2=
+12)">: </span><span style=3D"color:rgb(206,145,120)">border-box</span><span=
+ style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:r=
+gb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(215,186,125)">.message</span><span style=3D"color:rgb(212,212=
+,212)"> {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,=
+254)">margin-bottom</span><span style=3D"color:rgb(212,212,212)">: </span><=
+span style=3D"color:rgb(181,206,168)">1rem</span><span style=3D"color:rgb(2=
+12,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">max-width</span><span style=3D"color:rgb(212,212,212)">: </span><=
+span style=3D"color:rgb(181,206,168)">80%</span><span style=3D"color:rgb(21=
+2,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">line-height</span><span style=3D"color:rgb(212,212,212)">: </span=
+><span style=3D"color:rgb(181,206,168)">1.4</span><span style=3D"color:rgb(=
+212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">font-size</span><span style=3D"color:rgb(212,212,212)">: </span><=
+span style=3D"color:rgb(181,206,168)">1rem</span><span style=3D"color:rgb(2=
+12,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">word-wrap</span><span style=3D"color:rgb(212,212,212)">: </span><=
+span style=3D"color:rgb(206,145,120)">break-word</span><span style=3D"color=
+:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb=
+(156,220,254)">border-radius</span><span style=3D"color:rgb(212,212,212)">:=
+ </span><span style=3D"color:rgb(181,206,168)">16px</span><span style=3D"co=
+lor:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:=
+rgb(156,220,254)">padding</span><span style=3D"color:rgb(212,212,212)">: </=
+span><span style=3D"color:rgb(181,206,168)">0.6rem</span><span style=3D"col=
+or:rgb(212,212,212)"> </span><span style=3D"color:rgb(181,206,168)">1rem</s=
+pan><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </spa=
+n><span style=3D"color:rgb(156,220,254)">box-shadow</span><span style=3D"co=
+lor:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)">0</sp=
+an><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(=
+181,206,168)">1px</span><span style=3D"color:rgb(212,212,212)"> </span><spa=
+n style=3D"color:rgb(181,206,168)">4px</span><span style=3D"color:rgb(212,2=
+12,212)"> </span><span style=3D"color:rgb(220,220,170)">rgba</span><span st=
+yle=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(181,206,168=
+)">0</span><span style=3D"color:rgb(212,212,212)">,</span><span style=3D"co=
+lor:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)">,</spa=
+n><span style=3D"color:rgb(181,206,168)">0</span><span style=3D"color:rgb(2=
+12,212,212)">,</span><span style=3D"color:rgb(181,206,168)">0.1</span><span=
+ style=3D"color:rgb(212,212,212)">);</span></div><div><span style=3D"color:=
+rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(156,220,254)">white-space</span><span style=3D"color:rgb(2=
+12,212,212)">: </span><span style=3D"color:rgb(206,145,120)">pre-line</span=
+><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"c=
+olor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span=
+ style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span =
+style=3D"color:rgb(215,186,125)">.user</span><span style=3D"color:rgb(212,2=
+12,212)"> {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,=
+254)">background</span><span style=3D"color:rgb(212,212,212)">: </span><spa=
+n style=3D"color:rgb(206,145,120)">#daf1fd</span><span style=3D"color:rgb(2=
+12,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">align-self</span><span style=3D"color:rgb(212,212,212)">: </span>=
+<span style=3D"color:rgb(206,145,120)">flex-end</span><span style=3D"color:=
+rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)"=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(=
+156,220,254)">border-bottom-right-radius</span><span style=3D"color:rgb(212=
+,212,212)">: </span><span style=3D"color:rgb(181,206,168)">0</span><span st=
+yle=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D=
+"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(215,186,125)">.bot</span><span style=3D"color:rgb(212,212,212)"> =
+{</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">back=
+ground</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D=
+"color:rgb(206,145,120)">#e4e9f2</span><span style=3D"color:rgb(212,212,212=
+)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">a=
+lign-self</span><span style=3D"color:rgb(212,212,212)">: </span><span style=
+=3D"color:rgb(206,145,120)">flex-start</span><span style=3D"color:rgb(212,2=
+12,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,=
+254)">border-bottom-left-radius</span><span style=3D"color:rgb(212,212,212)=
+">: </span><span style=3D"color:rgb(181,206,168)">0</span><span style=3D"co=
+lor:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:=
+rgb(156,220,254)">color</span><span style=3D"color:rgb(212,212,212)">: </sp=
+an><span style=3D"color:rgb(206,145,120)">#222</span><span style=3D"color:r=
+gb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(1=
+56,220,254)">font-weight</span><span style=3D"color:rgb(212,212,212)">: </s=
+pan><span style=3D"color:rgb(181,206,168)">600</span><span style=3D"color:r=
+gb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212=
+,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,=
+186,125)">form</span><span style=3D"color:rgb(212,212,212)"> {</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">display</span><spa=
+n style=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,14=
+5,120)">flex</span><span style=3D"color:rgb(212,212,212)">;</span></div><di=
+v><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 </span><span style=3D"color:rgb(156,220,254)">padding</span><span s=
+tyle=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,1=
+68)">1rem</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><=
+span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(156,220,254)">border-top</span><span=
+ style=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206=
+,168)">1px</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(206,145,120)">solid</span><span style=3D"color:rgb(212,212,21=
+2)"> </span><span style=3D"color:rgb(206,145,120)">#ddd</span><span style=
+=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212=
+,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(156,220,254)">background</span><span style=3D"color:rgb(212,212,2=
+12)">: </span><span style=3D"color:rgb(206,145,120)">#f8f9fb</span><span st=
+yle=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D=
+"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(215,186,125)">input</span><span style=3D"color:rgb(212,212,212)">=
+[</span><span style=3D"color:rgb(156,220,254)">type</span><span style=3D"co=
+lor:rgb(212,212,212)">=3D</span><span style=3D"color:rgb(206,145,120)">text=
+</span><span style=3D"color:rgb(212,212,212)">] {</span></div><div><span st=
+yle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </=
+span><span style=3D"color:rgb(156,220,254)">flex-grow</span><span style=3D"=
+color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)">1</=
+span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </spa=
+n><span style=3D"color:rgb(156,220,254)">border</span><span style=3D"color:=
+rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)">1px</span=
+><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(20=
+6,145,120)">solid</span><span style=3D"color:rgb(212,212,212)"> </span><spa=
+n style=3D"color:rgb(206,145,120)">#bbb</span><span style=3D"color:rgb(212,=
+212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,=
+254)">border-radius</span><span style=3D"color:rgb(212,212,212)">: </span><=
+span style=3D"color:rgb(181,206,168)">25px</span><span style=3D"color:rgb(2=
+12,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,=
+220,254)">padding</span><span style=3D"color:rgb(212,212,212)">: </span><sp=
+an style=3D"color:rgb(181,206,168)">0.7rem</span><span style=3D"color:rgb(2=
+12,212,212)"> </span><span style=3D"color:rgb(181,206,168)">1.2rem</span><s=
+pan style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"colo=
+r:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span =
+style=3D"color:rgb(156,220,254)">font-size</span><span style=3D"color:rgb(2=
+12,212,212)">: </span><span style=3D"color:rgb(181,206,168)">1rem</span><sp=
+an style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color=
+:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span s=
+tyle=3D"color:rgb(156,220,254)">outline</span><span style=3D"color:rgb(212,=
+212,212)">: </span><span style=3D"color:rgb(206,145,120)">none</span><span =
+style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rg=
+b(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(156,220,254)">transition</span><span style=3D"color:rgb(212,=
+212,212)">: </span><span style=3D"color:rgb(181,206,168)">0.3s</span><span =
+style=3D"color:rgb(212,212,212)"> border-color </span><span style=3D"color:=
+rgb(206,145,120)">ease</span><span style=3D"color:rgb(212,212,212)">;</span=
+></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">input</span><s=
+pan style=3D"color:rgb(212,212,212)">[</span><span style=3D"color:rgb(156,2=
+20,254)">type</span><span style=3D"color:rgb(212,212,212)">=3D</span><span =
+style=3D"color:rgb(206,145,120)">text</span><span style=3D"color:rgb(212,21=
+2,212)">]</span><span style=3D"color:rgb(215,186,125)">:focus</span><span s=
+tyle=3D"color:rgb(212,212,212)"> {</span></div><div><span style=3D"color:rg=
+b(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(156,220,254)">border-color</span><span style=3D"color:rgb(21=
+2,212,212)">: </span><span style=3D"color:rgb(206,145,120)">#4b6cb7</span><=
+span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span=
+ style=3D"color:rgb(156,220,254)">box-shadow</span><span style=3D"color:rgb=
+(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)">0</span><spa=
+n style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(181,206=
+,168)">0</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(181,206,168)">8px</span><span style=3D"color:rgb(212,212,212)=
+"> </span><span style=3D"color:rgb(206,145,120)">#4b6cb7aa</span><span styl=
+e=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(21=
+2,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"c=
+olor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"co=
+lor:rgb(215,186,125)">button</span><span style=3D"color:rgb(212,212,212)"> =
+{</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">back=
+ground</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D=
+"color:rgb(206,145,120)">#4b6cb7</span><span style=3D"color:rgb(212,212,212=
+)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">c=
+olor</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"c=
+olor:rgb(206,145,120)">white</span><span style=3D"color:rgb(212,212,212)">;=
+</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">bord=
+er</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"col=
+or:rgb(206,145,120)">none</span><span style=3D"color:rgb(212,212,212)">;</s=
+pan></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">border-r=
+adius</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"=
+color:rgb(181,206,168)">25px</span><span style=3D"color:rgb(212,212,212)">;=
+</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">padd=
+ing</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"co=
+lor:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(181,206,168)">1.5rem</span><span style=3D"color:=
+rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)"=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(=
+156,220,254)">margin-left</span><span style=3D"color:rgb(212,212,212)">: </=
+span><span style=3D"color:rgb(181,206,168)">1rem</span><span style=3D"color=
+:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb=
+(156,220,254)">font-weight</span><span style=3D"color:rgb(212,212,212)">: <=
+/span><span style=3D"color:rgb(181,206,168)">700</span><span style=3D"color=
+:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb=
+(156,220,254)">cursor</span><span style=3D"color:rgb(212,212,212)">: </span=
+><span style=3D"color:rgb(206,145,120)">pointer</span><span style=3D"color:=
+rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)"=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(=
+156,220,254)">transition</span><span style=3D"color:rgb(212,212,212)">: bac=
+kground-color </span><span style=3D"color:rgb(181,206,168)">0.3s</span><spa=
+n style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145=
+,120)">ease</span><span style=3D"color:rgb(212,212,212)">;</span></div><div=
+><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span=
+></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(215,186,125)">button:hover:not</span><s=
+pan style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(215,1=
+86,125)">:disabled</span><span style=3D"color:rgb(212,212,212)">) {</span><=
+/div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">background<=
+/span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"color:=
+rgb(206,145,120)">#365298</span><span style=3D"color:rgb(212,212,212)">;</s=
+pan></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">button:disa=
+bled</span><span style=3D"color:rgb(212,212,212)"> {</span></div><div><span=
+ style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ </span><span style=3D"color:rgb(156,220,254)">cursor</span><span style=3D"=
+color:rgb(212,212,212)">: </span><span style=3D"color:rgb(206,145,120)">not=
+-allowed</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><s=
+pan style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(156,220,254)">opacity</span><span style=
+=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)"=
+>0.6</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span =
+style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </s=
+pan><span style=3D"color:rgb(197,134,192)">@media</span><span style=3D"colo=
+r:rgb(212,212,212)"> (</span><span style=3D"color:rgb(156,220,254)">max-wid=
+th</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D"col=
+or:rgb(181,206,168)">600px</span><span style=3D"color:rgb(212,212,212)">) {=
+</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">#app=
+</span><span style=3D"color:rgb(212,212,212)"> {</span></div><div><span sty=
+le=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">height</span><span=
+ style=3D"color:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206=
+,168)">100vh</span><span style=3D"color:rgb(212,212,212)">;</span></div><di=
+v><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,254)">border-=
+radius</span><span style=3D"color:rgb(212,212,212)">: </span><span style=3D=
+"color:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)">;</=
+span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220=
+,254)">box-shadow</span><span style=3D"color:rgb(212,212,212)">: </span><sp=
+an style=3D"color:rgb(206,145,120)">none</span><span style=3D"color:rgb(212=
+,212,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color=
+:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span s=
+tyle=3D"color:rgb(215,186,125)">#chat</span><span style=3D"color:rgb(212,21=
+2,212)"> {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"colo=
+r:rgb(156,220,254)">padding</span><span style=3D"color:rgb(212,212,212)">: =
+</span><span style=3D"color:rgb(181,206,168)">0.8rem</span><span style=3D"c=
+olor:rgb(212,212,212)"> </span><span style=3D"color:rgb(181,206,168)">1rem<=
+/span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</sp=
+an></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(215,186,125)">input</s=
+pan><span style=3D"color:rgb(212,212,212)">[</span><span style=3D"color:rgb=
+(156,220,254)">type</span><span style=3D"color:rgb(212,212,212)">=3D</span>=
+<span style=3D"color:rgb(206,145,120)">text</span><span style=3D"color:rgb(=
+212,212,212)">] {</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(156,220,254)">font-size</span><span style=3D"color:rgb(212,21=
+2,212)">: </span><span style=3D"color:rgb(181,206,168)">1rem</span><span st=
+yle=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div>=
+<span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(215,186,125)">button</span><span sty=
+le=3D"color:rgb(212,212,212)"> {</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </spa=
+n><span style=3D"color:rgb(156,220,254)">padding</span><span style=3D"color=
+:rgb(212,212,212)">: </span><span style=3D"color:rgb(181,206,168)">0</span>=
+<span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(181=
+,206,168)">1rem</span><span style=3D"color:rgb(212,212,212)">;</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 </span><span style=3D"color:rgb(128,128,128)">&lt;/</spa=
+n><span style=3D"color:rgb(86,156,214)">style</span><span style=3D"color:rg=
+b(128,128,128)">&gt;</span></div><div><span style=3D"color:rgb(128,128,128)=
+">&lt;/</span><span style=3D"color:rgb(86,156,214)">head</span><span style=
+=3D"color:rgb(128,128,128)">&gt;</span></div><div><span style=3D"color:rgb(=
+128,128,128)">&lt;</span><span style=3D"color:rgb(86,156,214)">body</span><=
+span style=3D"color:rgb(128,128,128)">&gt;</span></div><div>=C2=A0 =C2=A0 <=
+span style=3D"color:rgb(128,128,128)">&lt;</span><span style=3D"color:rgb(8=
+6,156,214)">div</span> <span style=3D"color:rgb(156,220,254)">id</span>=3D<=
+span style=3D"color:rgb(206,145,120)">&quot;app&quot;</span><span style=3D"=
+color:rgb(128,128,128)">&gt;</span></div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 <=
+span style=3D"color:rgb(128,128,128)">&lt;</span><span style=3D"color:rgb(8=
+6,156,214)">header</span><span style=3D"color:rgb(128,128,128)">&gt;</span>=
+Medical Recommendation Chatbot<span style=3D"color:rgb(128,128,128)">&lt;/<=
+/span><span style=3D"color:rgb(86,156,214)">header</span><span style=3D"col=
+or:rgb(128,128,128)">&gt;</span></div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 <spa=
+n style=3D"color:rgb(128,128,128)">&lt;</span><span style=3D"color:rgb(86,1=
+56,214)">div</span> <span style=3D"color:rgb(156,220,254)">id</span>=3D<spa=
+n style=3D"color:rgb(206,145,120)">&quot;chat&quot;</span> <span style=3D"c=
+olor:rgb(156,220,254)">aria-live</span>=3D<span style=3D"color:rgb(206,145,=
+120)">&quot;polite&quot;</span> <span style=3D"color:rgb(156,220,254)">aria=
+-atomic</span>=3D<span style=3D"color:rgb(206,145,120)">&quot;false&quot;</=
+span><span style=3D"color:rgb(128,128,128)">&gt;&lt;/</span><span style=3D"=
+color:rgb(86,156,214)">div</span><span style=3D"color:rgb(128,128,128)">&gt=
+;</span></div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"color:rgb(128=
+,128,128)">&lt;</span><span style=3D"color:rgb(86,156,214)">form</span> <sp=
+an style=3D"color:rgb(156,220,254)">id</span>=3D<span style=3D"color:rgb(20=
+6,145,120)">&quot;inputForm&quot;</span> <span style=3D"color:rgb(156,220,2=
+54)">aria-label</span>=3D<span style=3D"color:rgb(206,145,120)">&quot;User =
+input form&quot;</span><span style=3D"color:rgb(128,128,128)">&gt;</span></=
+div><div>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"color:rgb=
+(128,128,128)">&lt;</span><span style=3D"color:rgb(86,156,214)">input</span=
+> <span style=3D"color:rgb(156,220,254)">type</span>=3D<span style=3D"color=
+:rgb(206,145,120)">&quot;text&quot;</span> <span style=3D"color:rgb(156,220=
+,254)">id</span>=3D<span style=3D"color:rgb(206,145,120)">&quot;userInput&q=
+uot;</span> <span style=3D"color:rgb(156,220,254)">autocomplete</span>=3D<s=
+pan style=3D"color:rgb(206,145,120)">&quot;off&quot;</span> <span style=3D"=
+color:rgb(156,220,254)">placeholder</span>=3D<span style=3D"color:rgb(206,1=
+45,120)">&quot;Describe your symptoms or ask about diseases...&quot;</span>=
+ <span style=3D"color:rgb(156,220,254)">required</span> <span style=3D"colo=
+r:rgb(156,220,254)">maxlength</span>=3D<span style=3D"color:rgb(206,145,120=
+)">&quot;500&quot;</span> <span style=3D"color:rgb(156,220,254)">aria-descr=
+ibedby</span>=3D<span style=3D"color:rgb(206,145,120)">&quot;desc&quot;</sp=
+an><span style=3D"color:rgb(128,128,128)">/&gt;</span></div><div>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;=
+</span><span style=3D"color:rgb(86,156,214)">button</span> <span style=3D"c=
+olor:rgb(156,220,254)">type</span>=3D<span style=3D"color:rgb(206,145,120)"=
+>&quot;submit&quot;</span> <span style=3D"color:rgb(156,220,254)">id</span>=
+=3D<span style=3D"color:rgb(206,145,120)">&quot;sendBtn&quot;</span><span s=
+tyle=3D"color:rgb(128,128,128)">&gt;</span>Send<span style=3D"color:rgb(128=
+,128,128)">&lt;/</span><span style=3D"color:rgb(86,156,214)">button</span><=
+span style=3D"color:rgb(128,128,128)">&gt;</span></div><div>=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128)">&lt;/</span><span styl=
+e=3D"color:rgb(86,156,214)">form</span><span style=3D"color:rgb(128,128,128=
+)">&gt;</span></div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(128,128,128=
+)">&lt;/</span><span style=3D"color:rgb(86,156,214)">div</span><span style=
+=3D"color:rgb(128,128,128)">&gt;</span></div><div>=C2=A0 =C2=A0 <span style=
+=3D"color:rgb(128,128,128)">&lt;</span><span style=3D"color:rgb(86,156,214)=
+">script</span><span style=3D"color:rgb(128,128,128)">&gt;</span></div><div=
+><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span>=
+<span style=3D"color:rgb(106,153,85)">// Symptom keywords dictionary</span>=
+</div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(86,156,214)">const</span><span style=3D=
+"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,255)">symp=
+tomKeywords</span><span style=3D"color:rgb(212,212,212)"> =3D {</span></div=
+><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 </span><span style=3D"color:rgb(206,145,120)">&quot;headache&=
+quot;</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"c=
+olor:rgb(212,212,212)"> [</span><span style=3D"color:rgb(206,145,120)">&quo=
+t;headache&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><spa=
+n style=3D"color:rgb(206,145,120)">&quot;head pain&quot;</span><span style=
+=3D"color:rgb(212,212,212)">],</span></div><div><span style=3D"color:rgb(21=
+2,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D=
+"color:rgb(206,145,120)">&quot;fever&quot;</span><span style=3D"color:rgb(1=
+56,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> [</span><span =
+style=3D"color:rgb(206,145,120)">&quot;fever&quot;</span><span style=3D"col=
+or:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,145,120)">&quot;=
+high temperature&quot;</span><span style=3D"color:rgb(212,212,212)">],</spa=
+n></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(206,145,120)">&quot;bo=
+dy ache&quot;</span><span style=3D"color:rgb(156,220,254)">:</span><span st=
+yle=3D"color:rgb(212,212,212)"> [</span><span style=3D"color:rgb(206,145,12=
+0)">&quot;body ache&quot;</span><span style=3D"color:rgb(212,212,212)">, </=
+span><span style=3D"color:rgb(206,145,120)">&quot;muscle pain&quot;</span><=
+span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206=
+,145,120)">&quot;general pain&quot;</span><span style=3D"color:rgb(212,212,=
+212)">],</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(206,145,120=
+)">&quot;cough&quot;</span><span style=3D"color:rgb(156,220,254)">:</span><=
+span style=3D"color:rgb(212,212,212)"> [</span><span style=3D"color:rgb(206=
+,145,120)">&quot;cough&quot;</span><span style=3D"color:rgb(212,212,212)">,=
+ </span><span style=3D"color:rgb(206,145,120)">&quot;coughing&quot;</span><=
+span style=3D"color:rgb(212,212,212)">],</span></div><div><span style=3D"co=
+lor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><spa=
+n style=3D"color:rgb(206,145,120)">&quot;dry cough&quot;</span><span style=
+=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)">=
+ [</span><span style=3D"color:rgb(206,145,120)">&quot;dry cough&quot;</span=
+><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(2=
+06,145,120)">&quot;non-productive cough&quot;</span><span style=3D"color:rg=
+b(212,212,212)">],</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(2=
+06,145,120)">&quot;productive cough&quot;</span><span style=3D"color:rgb(15=
+6,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> [</span><span s=
+tyle=3D"color:rgb(206,145,120)">&quot;productive cough&quot;</span><span st=
+yle=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,145,12=
+0)">&quot;cough with phlegm&quot;</span><span style=3D"color:rgb(212,212,21=
+2)">],</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(206,145,120=
+)">&quot;sore throat&quot;</span><span style=3D"color:rgb(156,220,254)">:</=
+span><span style=3D"color:rgb(212,212,212)"> [</span><span style=3D"color:r=
+gb(206,145,120)">&quot;sore throat&quot;</span><span style=3D"color:rgb(212=
+,212,212)">, </span><span style=3D"color:rgb(206,145,120)">&quot;throat pai=
+n&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=
+=3D"color:rgb(206,145,120)">&quot;scratchy throat&quot;</span><span style=
+=3D"color:rgb(212,212,212)">],</span></div><div><span style=3D"color:rgb(21=
+2,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D=
+"color:rgb(206,145,120)">&quot;stuffy nose&quot;</span><span style=3D"color=
+:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> [</span>=
+<span style=3D"color:rgb(206,145,120)">&quot;stuffy nose&quot;</span><span =
+style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,145,=
+120)">&quot;nasal congestion&quot;</span><span style=3D"color:rgb(212,212,2=
+12)">, </span><span style=3D"color:rgb(206,145,120)">&quot;blocked nose&quo=
+t;</span><span style=3D"color:rgb(212,212,212)">],</span></div><div><span s=
+tyle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <=
+/span><span style=3D"color:rgb(206,145,120)">&quot;nasal congestion&quot;</=
+span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rg=
+b(212,212,212)"> [</span><span style=3D"color:rgb(206,145,120)">&quot;nasal=
+ congestion&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><sp=
+an style=3D"color:rgb(206,145,120)">&quot;blocked nose&quot;</span><span st=
+yle=3D"color:rgb(212,212,212)">]</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 };</span></div><br><div><span sty=
+le=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(106,153,85)">// Basic dataset for demo - since no server-sid=
+e reading is possible,</span></div><div><span style=3D"color:rgb(212,212,21=
+2)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)=
+">// emulating the medical data as a JS array of objects here for demo purp=
+oses.</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">const</span><sp=
+an style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193=
+,255)">medicalData</span><span style=3D"color:rgb(212,212,212)"> =3D [</spa=
+n></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Diseas=
+e</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color=
+:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;flu=
+&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D=
+"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,25=
+4)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"c=
+olor:rgb(206,145,120)">&quot;Oseltamivir&quot;</span><span style=3D"color:r=
+gb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:r=
+gb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:</sp=
+an><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(=
+206,145,120)">&quot;cold&quot;</span><span style=3D"color:rgb(212,212,212)"=
+>, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><span style=
+=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)">=
+ </span><span style=3D"color:rgb(206,145,120)">&quot;Antihistamines or deco=
+ngestants&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></di=
+v><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span=
+><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(21=
+2,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;headache&q=
+uot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"c=
+olor:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)=
+">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"col=
+or:rgb(206,145,120)">&quot;Paracetamol or Ibuprofen&quot;</span><span style=
+=3D"color:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(2=
+12,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=
+=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,=
+254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D=
+"color:rgb(206,145,120)">&quot;strep throat&quot;</span><span style=3D"colo=
+r:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicin=
+e</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color=
+:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Ant=
+ibiotics prescribed by a doctor&quot;</span><span style=3D"color:rgb(212,21=
+2,212)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,22=
+0,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span><span =
+style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,1=
+20)">&quot;flu&quot;</span><span style=3D"color:rgb(212,212,212)">, </span>=
+<span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:=
+rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><s=
+pan style=3D"color:rgb(206,145,120)">&quot;Oseltamivir, Paracetamol for fev=
+er&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></div><div>=
+<span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span><span =
+style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,2=
+12)"> </span><span style=3D"color:rgb(206,145,120)">&quot;cold&quot;</span>=
+<span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(15=
+6,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><=
+span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,=
+145,120)">&quot;Antihistamines like Cetirizine, Decongestants like Pseudoep=
+hedrine&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span><s=
+pan style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,2=
+12,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;headache&quot=
+;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"colo=
+r:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:=
+</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:=
+rgb(206,145,120)">&quot;Paracetamol or Ibuprofen&quot;</span><span style=3D=
+"color:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,=
+212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D=
+"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254=
+)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"co=
+lor:rgb(206,145,120)">&quot;strep throat&quot;</span><span style=3D"color:r=
+gb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</=
+span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rg=
+b(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Penici=
+llin or Amoxicillin (as prescribed)&quot;</span><span style=3D"color:rgb(21=
+2,212,212)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(15=
+6,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span><s=
+pan style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,1=
+45,120)">&quot;diarrhea&quot;</span><span style=3D"color:rgb(212,212,212)">=
+, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><span style=
+=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)">=
+ </span><span style=3D"color:rgb(206,145,120)">&quot;ORS solution, Loperami=
+de for symptom relief&quot;</span><span style=3D"color:rgb(212,212,212)"> }=
+,</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Di=
+sease</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"c=
+olor:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot=
+;constipation&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><=
+span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:r=
+gb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><sp=
+an style=3D"color:rgb(206,145,120)">&quot;Laxatives like Bisacodyl or fiber=
+ supplements&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span><=
+/div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</=
+span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rg=
+b(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;acidit=
+y&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=
+=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220=
+,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(206,145,120)">&quot;Antacids like Ranitidine or Omeprazole&qu=
+ot;</span><span style=3D"color:rgb(212,212,212)"> },</span></div><div><span=
+ style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ { </span><span style=3D"color:rgb(156,220,254)">Disease</span><span style=
+=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)">=
+ </span><span style=3D"color:rgb(206,145,120)">&quot;indigestion&quot;</spa=
+n><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(=
+156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span=
+><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(20=
+6,145,120)">&quot;Antacids, Digestive enzymes&quot;</span><span style=3D"co=
+lor:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,212=
+,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"co=
+lor:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)">=
+:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color=
+:rgb(206,145,120)">&quot;asthma&quot;</span><span style=3D"color:rgb(212,21=
+2,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><spa=
+n style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212=
+,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Inhalers with S=
+albutamol or corticosteroids&quot;</span><span style=3D"color:rgb(212,212,2=
+12)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,2=
+54)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span><span sty=
+le=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)=
+">&quot;hypertension&quot;</span><span style=3D"color:rgb(212,212,212)">, <=
+/span><span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"=
+color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </s=
+pan><span style=3D"color:rgb(206,145,120)">&quot;Amlodipine, Lisinopril, or=
+ Losartan&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></di=
+v><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span=
+><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(21=
+2,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;diabetes&q=
+uot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"c=
+olor:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)=
+">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"col=
+or:rgb(206,145,120)">&quot;Metformin or insulin (depending on type)&quot;</=
+span><span style=3D"color:rgb(212,212,212)"> },</span></div><div><span styl=
+e=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </=
+span><span style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"co=
+lor:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(206,145,120)">&quot;migraine&quot;</span><span s=
+tyle=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,2=
+54)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><span st=
+yle=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120=
+)">&quot;Sumatriptan, Naproxen&quot;</span><span style=3D"color:rgb(212,212=
+,212)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,22=
+0,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span><span =
+style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,1=
+20)">&quot;allergy&quot;</span><span style=3D"color:rgb(212,212,212)">, </s=
+pan><span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"co=
+lor:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(206,145,120)">&quot;Loratadine, Cetirizine&quot;=
+</span><span style=3D"color:rgb(212,212,212)"> },</span></div><div><span st=
+yle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { =
+</span><span style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"=
+color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </s=
+pan><span style=3D"color:rgb(206,145,120)">&quot;back pain&quot;</span><spa=
+n style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,22=
+0,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><span=
+ style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,=
+120)">&quot;Ibuprofen, Muscle relaxants like Cyclobenzaprine&quot;</span><s=
+pan style=3D"color:rgb(212,212,212)"> },</span></div><div><span style=3D"co=
+lor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><s=
+pan style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb=
+(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span=
+ style=3D"color:rgb(206,145,120)">&quot;urinary tract infection&quot;</span=
+><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(1=
+56,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span>=
+<span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206=
+,145,120)">&quot;Nitrofurantoin, Ciprofloxacin (as prescribed)&quot;</span>=
+<span style=3D"color:rgb(212,212,212)"> },</span></div><div><span style=3D"=
+color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span>=
+<span style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:r=
+gb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><sp=
+an style=3D"color:rgb(206,145,120)">&quot;skin rash&quot;</span><span style=
+=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)"=
+>Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><span style=
+=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">=
+&quot;Topical corticosteroids or antihistamines&quot;</span><span style=3D"=
+color:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,2=
+12,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"=
+color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)=
+">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"col=
+or:rgb(206,145,120)">&quot;eczema&quot;</span><span style=3D"color:rgb(212,=
+212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><s=
+pan style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,2=
+12,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Moisturizers,=
+ Hydrocortisone cream&quot;</span><span style=3D"color:rgb(212,212,212)"> }=
+,</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Di=
+sease</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"c=
+olor:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot=
+;acne&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span sty=
+le=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,2=
+20,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(206,145,120)">&quot;Benzoyl peroxide, Salicylic acid, Clindam=
+ycin gel&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></div=
+><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span=
+><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(21=
+2,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;bronchitis=
+&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D=
+"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,25=
+4)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"c=
+olor:rgb(206,145,120)">&quot;Cough syrups, Amoxicillin if bacterial&quot;</=
+span><span style=3D"color:rgb(212,212,212)"> },</span></div><div><span styl=
+e=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </=
+span><span style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"co=
+lor:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(206,145,120)">&quot;tonsillitis&quot;</span><spa=
+n style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,22=
+0,254)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><span=
+ style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,=
+120)">&quot;Paracetamol, Antibiotics if bacterial&quot;</span><span style=
+=3D"color:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(2=
+12,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=
+=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,=
+254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D=
+"color:rgb(206,145,120)">&quot;sinusitis&quot;</span><span style=3D"color:r=
+gb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</=
+span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rg=
+b(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Decong=
+estants, Saline nasal spray, Amoxicillin if bacterial&quot;</span><span sty=
+le=3D"color:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb=
+(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span sty=
+le=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,22=
+0,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(206,145,120)">&quot;dengue&quot;</span><span style=3D"color:r=
+gb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</=
+span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rg=
+b(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Parace=
+tamol for fever, Hydration, No NSAIDs&quot;</span><span style=3D"color:rgb(=
+212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb=
+(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span=
+><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(20=
+6,145,120)">&quot;malaria&quot;</span><span style=3D"color:rgb(212,212,212)=
+">, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><span styl=
+e=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"=
+> </span><span style=3D"color:rgb(206,145,120)">&quot;Chloroquine, Artemisi=
+nin-based combinations (ACT)&quot;</span><span style=3D"color:rgb(212,212,2=
+12)"> },</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,2=
+54)">Disease</span><span style=3D"color:rgb(156,220,254)">:</span><span sty=
+le=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)=
+">&quot;typhoid&quot;</span><span style=3D"color:rgb(212,212,212)">, </span=
+><span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color=
+:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><=
+span style=3D"color:rgb(206,145,120)">&quot;Cefixime, Azithromycin (as pres=
+cribed)&quot;</span><span style=3D"color:rgb(212,212,212)"> },</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Disease</span><s=
+pan style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,2=
+12,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;chickenpox&qu=
+ot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"co=
+lor:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,220,254)"=
+>:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"colo=
+r:rgb(206,145,120)">&quot;Calamine lotion, Acyclovir in severe cases&quot;<=
+/span><span style=3D"color:rgb(212,212,212)"> },</span></div><div><span sty=
+le=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { <=
+/span><span style=3D"color:rgb(156,220,254)">Disease</span><span style=3D"c=
+olor:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </sp=
+an><span style=3D"color:rgb(206,145,120)">&quot;measles&quot;</span><span s=
+tyle=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,2=
+54)">Medicine</span><span style=3D"color:rgb(156,220,254)">:</span><span st=
+yle=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120=
+)">&quot;Paracetamol, Vitamin A supplements&quot;</span><span style=3D"colo=
+r:rgb(212,212,212)"> },</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"colo=
+r:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(156,220,254)">:<=
+/span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:r=
+gb(206,145,120)">&quot;hepatitis A&quot;</span><span style=3D"color:rgb(212=
+,212,212)">, </span><span style=3D"color:rgb(156,220,254)">Medicine</span><=
+span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color:rgb(212,=
+212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Supportive c=
+are, Rest, Hydration&quot;</span><span style=3D"color:rgb(212,212,212)"> },=
+</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Di=
+sease</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"c=
+olor:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot=
+;covid-19&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span=
+ style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(1=
+56,220,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span s=
+tyle=3D"color:rgb(206,145,120)">&quot;Paracetamol for fever, supportive car=
+e, consult doctor&quot;</span><span style=3D"color:rgb(212,212,212)"> },</s=
+pan></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 { </span><span style=3D"color:rgb(156,220,254)">Diseas=
+e</span><span style=3D"color:rgb(156,220,254)">:</span><span style=3D"color=
+:rgb(212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;pin=
+k eye&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span sty=
+le=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(156,2=
+20,254)">:</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(206,145,120)">&quot;Lubricant eye drops, Antibiotic drops for=
+ bacterial conjunctivitis&quot;</span><span style=3D"color:rgb(212,212,212)=
+"> }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 ];</span></div><br><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">=
+// Extract symptoms from user input</span></div><div><span style=3D"color:r=
+gb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rg=
+b(86,156,214)">function</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(220,220,170)">extractSymptoms</span><span style=
+=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">=
+text</span><span style=3D"color:rgb(212,212,212)">) {</span></div><div><spa=
+n style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(86,156,214)">const</span><span style=3D=
+"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,255)">lowe=
+rText</span><span style=3D"color:rgb(212,212,212)"> =3D </span><span style=
+=3D"color:rgb(156,220,254)">text</span><span style=3D"color:rgb(212,212,212=
+)">.</span><span style=3D"color:rgb(220,220,170)">toLowerCase</span><span s=
+tyle=3D"color:rgb(212,212,212)">();</span></div><div><span style=3D"color:r=
+gb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span sty=
+le=3D"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(212,212=
+,212)"> </span><span style=3D"color:rgb(78,201,176)">Object</span><span sty=
+le=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(220,220,170)=
+">keys</span><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"=
+color:rgb(79,193,255)">symptomKeywords</span><span style=3D"color:rgb(212,2=
+12,212)">).</span><span style=3D"color:rgb(220,220,170)">filter</span><span=
+ style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,=
+254)">symptom</span><span style=3D"color:rgb(212,212,212)"> </span><span st=
+yle=3D"color:rgb(86,156,214)">=3D&gt;</span></div><div><span style=3D"color=
+:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+</span><span style=3D"color:rgb(79,193,255)">symptomKeywords</span><span st=
+yle=3D"color:rgb(212,212,212)">[</span><span style=3D"color:rgb(156,220,254=
+)">symptom</span><span style=3D"color:rgb(212,212,212)">].</span><span styl=
+e=3D"color:rgb(220,220,170)">some</span><span style=3D"color:rgb(212,212,21=
+2)">(</span><span style=3D"color:rgb(156,220,254)">keyword</span><span styl=
+e=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(86,156,214)">=
+=3D&gt;</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D=
+"color:rgb(79,193,255)">lowerText</span><span style=3D"color:rgb(212,212,21=
+2)">.</span><span style=3D"color:rgb(220,220,170)">includes</span><span sty=
+le=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)=
+">keyword</span><span style=3D"color:rgb(212,212,212)">))</span></div><div>=
+<span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 );</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 }</span></div><br><div><span style=3D"color:rgb(212,21=
+2,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153=
+,85)">// Recommend OTC medicines</span></div><div><span style=3D"color:rgb(=
+212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(8=
+6,156,214)">function</span><span style=3D"color:rgb(212,212,212)"> </span><=
+span style=3D"color:rgb(220,220,170)">recommendOTC</span><span style=3D"col=
+or:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">symptom=
+s</span><span style=3D"color:rgb(212,212,212)">) {</span></div><div><span s=
+tyle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <=
+/span><span style=3D"color:rgb(86,156,214)">const</span><span style=3D"colo=
+r:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,255)">rec</span=
+><span style=3D"color:rgb(212,212,212)"> =3D [];</span></div><div><span sty=
+le=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </s=
+pan><span style=3D"color:rgb(197,134,192)">if</span><span style=3D"color:rg=
+b(212,212,212)"> (</span><span style=3D"color:rgb(156,220,254)">symptoms</s=
+pan><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb=
+(220,220,170)">some</span><span style=3D"color:rgb(212,212,212)">(</span><s=
+pan style=3D"color:rgb(156,220,254)">sym</span><span style=3D"color:rgb(212=
+,212,212)"> </span><span style=3D"color:rgb(86,156,214)">=3D&gt;</span><spa=
+n style=3D"color:rgb(212,212,212)"> [</span><span style=3D"color:rgb(206,14=
+5,120)">&quot;headache&quot;</span><span style=3D"color:rgb(212,212,212)">,=
+ </span><span style=3D"color:rgb(206,145,120)">&quot;fever&quot;</span><spa=
+n style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,14=
+5,120)">&quot;body ache&quot;</span><span style=3D"color:rgb(212,212,212)">=
+].</span><span style=3D"color:rgb(220,220,170)">includes</span><span style=
+=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">=
+sym</span><span style=3D"color:rgb(212,212,212)">))) {</span></div><div><sp=
+an style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">rec</span><s=
+pan style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(220,2=
+20,170)">push</span><span style=3D"color:rgb(212,212,212)">(</span><span st=
+yle=3D"color:rgb(206,145,120)">&quot;Consider Paracetamol or Ibuprofen for =
+pain and fever.&quot;</span><span style=3D"color:rgb(212,212,212)">);</span=
+></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)"=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(=
+197,134,192)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><spa=
+n style=3D"color:rgb(156,220,254)">symptoms</span><span style=3D"color:rgb(=
+212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">includes</span=
+><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(20=
+6,145,120)">&quot;cough&quot;</span><span style=3D"color:rgb(212,212,212)">=
+)) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(1=
+97,134,192)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><span=
+ style=3D"color:rgb(156,220,254)">symptoms</span><span style=3D"color:rgb(2=
+12,212,212)">.</span><span style=3D"color:rgb(220,220,170)">includes</span>=
+<span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206=
+,145,120)">&quot;dry cough&quot;</span><span style=3D"color:rgb(212,212,212=
+)">)) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(79,193,255)">rec</span><span style=3D"color:rgb(212,212,21=
+2)">.</span><span style=3D"color:rgb(220,220,170)">push</span><span style=
+=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">=
+&quot;Try a suppressant like Dextromethorphan.&quot;</span><span style=3D"c=
+olor:rgb(212,212,212)">);</span></div><div><span style=3D"color:rgb(212,212=
+,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 } </span><sp=
+an style=3D"color:rgb(197,134,192)">else</span><span style=3D"color:rgb(212=
+,212,212)"> </span><span style=3D"color:rgb(197,134,192)">if</span><span st=
+yle=3D"color:rgb(212,212,212)"> (</span><span style=3D"color:rgb(156,220,25=
+4)">symptoms</span><span style=3D"color:rgb(212,212,212)">.</span><span sty=
+le=3D"color:rgb(220,220,170)">includes</span><span style=3D"color:rgb(212,2=
+12,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;productive co=
+ugh&quot;</span><span style=3D"color:rgb(212,212,212)">)) {</span></div><di=
+v><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,=
+255)">rec</span><span style=3D"color:rgb(212,212,212)">.</span><span style=
+=3D"color:rgb(220,220,170)">push</span><span style=3D"color:rgb(212,212,212=
+)">(</span><span style=3D"color:rgb(206,145,120)">&quot;Try an expectorant =
+like Guaifenesin.&quot;</span><span style=3D"color:rgb(212,212,212)">);</sp=
+an></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 } </span><span style=3D"color:rgb(197,13=
+4,192)">else</span><span style=3D"color:rgb(212,212,212)"> {</span></div><d=
+iv><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,1=
+93,255)">rec</span><span style=3D"color:rgb(212,212,212)">.</span><span sty=
+le=3D"color:rgb(220,220,170)">push</span><span style=3D"color:rgb(212,212,2=
+12)">(</span><span style=3D"color:rgb(206,145,120)">&quot;For cough relief,=
+ consider a cough syrup.&quot;</span><span style=3D"color:rgb(212,212,212)"=
+>);</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D=
+"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span>=
+</div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192)">if</span><s=
+pan style=3D"color:rgb(212,212,212)"> (</span><span style=3D"color:rgb(156,=
+220,254)">symptoms</span><span style=3D"color:rgb(212,212,212)">.</span><sp=
+an style=3D"color:rgb(220,220,170)">includes</span><span style=3D"color:rgb=
+(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;sore th=
+roat&quot;</span><span style=3D"color:rgb(212,212,212)">)) {</span></div><d=
+iv><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">rec</=
+span><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rg=
+b(220,220,170)">push</span><span style=3D"color:rgb(212,212,212)">(</span><=
+span style=3D"color:rgb(206,145,120)">&quot;Lozenges or throat sprays may h=
+elp.&quot;</span><span style=3D"color:rgb(212,212,212)">);</span></div><div=
+><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192=
+)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><span style=3D"=
+color:rgb(156,220,254)">symptoms</span><span style=3D"color:rgb(212,212,212=
+)">.</span><span style=3D"color:rgb(220,220,170)">some</span><span style=3D=
+"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">sym=
+</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:=
+rgb(86,156,214)">=3D&gt;</span><span style=3D"color:rgb(212,212,212)"> [</s=
+pan><span style=3D"color:rgb(206,145,120)">&quot;stuffy nose&quot;</span><s=
+pan style=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(206,=
+145,120)">&quot;nasal congestion&quot;</span><span style=3D"color:rgb(212,2=
+12,212)">].</span><span style=3D"color:rgb(220,220,170)">includes</span><sp=
+an style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,22=
+0,254)">sym</span><span style=3D"color:rgb(212,212,212)">))) {</span></div>=
+<div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">rec</=
+span><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rg=
+b(220,220,170)">push</span><span style=3D"color:rgb(212,212,212)">(</span><=
+span style=3D"color:rgb(206,145,120)">&quot;Use nasal decongestant sprays o=
+r Pseudoephedrine tablets.&quot;</span><span style=3D"color:rgb(212,212,212=
+)">);</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(21=
+2,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D=
+"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(212,212,212)=
+"> </span><span style=3D"color:rgb(79,193,255)">rec</span><span style=3D"co=
+lor:rgb(212,212,212)">.</span><span style=3D"color:rgb(156,220,254)">length=
+</span><span style=3D"color:rgb(212,212,212)"> &gt; </span><span style=3D"c=
+olor:rgb(181,206,168)">0</span><span style=3D"color:rgb(212,212,212)"> ? </=
+span><span style=3D"color:rgb(79,193,255)">rec</span><span style=3D"color:r=
+gb(212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">join</span>=
+<span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206=
+,145,120)">&quot;</span><span style=3D"color:rgb(215,186,125)">\n</span><sp=
+an style=3D"color:rgb(206,145,120)">&quot;</span><span style=3D"color:rgb(2=
+12,212,212)">) : </span><span style=3D"color:rgb(86,156,214)">null</span><s=
+pan style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"colo=
+r:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><br><div><spa=
+n style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span=
+ style=3D"color:rgb(106,153,85)">// Check if user input matches a disease i=
+n the dataset</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">funct=
+ion</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"col=
+or:rgb(220,220,170)">checkDatasetDisease</span><span style=3D"color:rgb(212=
+,212,212)">(</span><span style=3D"color:rgb(156,220,254)">text</span><span =
+style=3D"color:rgb(212,212,212)">) {</span></div><div><span style=3D"color:=
+rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span st=
+yle=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212,=
+212)"> </span><span style=3D"color:rgb(79,193,255)">input</span><span style=
+=3D"color:rgb(212,212,212)"> =3D </span><span style=3D"color:rgb(156,220,25=
+4)">text</span><span style=3D"color:rgb(212,212,212)">.</span><span style=
+=3D"color:rgb(220,220,170)">toLowerCase</span><span style=3D"color:rgb(212,=
+212,212)">();</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,=
+134,192)">for</span><span style=3D"color:rgb(212,212,212)"> (</span><span s=
+tyle=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212=
+,212)"> </span><span style=3D"color:rgb(79,193,255)">entry</span><span styl=
+e=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(86,156,214)">=
+of</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"colo=
+r:rgb(79,193,255)">medicalData</span><span style=3D"color:rgb(212,212,212)"=
+>) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(1=
+97,134,192)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><span=
+ style=3D"color:rgb(79,193,255)">entry</span><span style=3D"color:rgb(212,2=
+12,212)">.</span><span style=3D"color:rgb(156,220,254)">Disease</span><span=
+ style=3D"color:rgb(212,212,212)"> &amp;&amp; </span><span style=3D"color:r=
+gb(79,193,255)">entry</span><span style=3D"color:rgb(212,212,212)">.</span>=
+<span style=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:=
+rgb(212,212,212)">) {</span></div><div><span style=3D"color:rgb(212,212,212=
+)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </=
+span><span style=3D"color:rgb(197,134,192)">if</span><span style=3D"color:r=
+gb(212,212,212)"> (</span><span style=3D"color:rgb(79,193,255)">input</span=
+><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(22=
+0,220,170)">includes</span><span style=3D"color:rgb(212,212,212)">(</span><=
+span style=3D"color:rgb(79,193,255)">entry</span><span style=3D"color:rgb(2=
+12,212,212)">.</span><span style=3D"color:rgb(156,220,254)">Disease</span><=
+span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(220,=
+220,170)">toLowerCase</span><span style=3D"color:rgb(212,212,212)">())) {</=
+span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><spa=
+n style=3D"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(21=
+2,212,212)"> </span><span style=3D"color:rgb(206,145,120)">`For </span><spa=
+n style=3D"color:rgb(86,156,214)">${</span><span style=3D"color:rgb(79,193,=
+255)">entry</span><span style=3D"color:rgb(212,212,212)">.</span><span styl=
+e=3D"color:rgb(156,220,254)">Disease</span><span style=3D"color:rgb(86,156,=
+214)">}</span><span style=3D"color:rgb(206,145,120)">, consider: </span><sp=
+an style=3D"color:rgb(86,156,214)">${</span><span style=3D"color:rgb(79,193=
+,255)">entry</span><span style=3D"color:rgb(212,212,212)">.</span><span sty=
+le=3D"color:rgb(156,220,254)">Medicine</span><span style=3D"color:rgb(86,15=
+6,214)">}</span><span style=3D"color:rgb(206,145,120)">`</span><span style=
+=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"color:rgb(212=
+,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span styl=
+e=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</s=
+pan></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192)">return</=
+span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rg=
+b(86,156,214)">null</span><span style=3D"color:rgb(212,212,212)">;</span></=
+div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ }</span></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Chat hist=
+ory - array of {speaker: &quot;user&quot; | &quot;bot&quot;, text: &quot;&q=
+uot;}</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">let</span><span=
+ style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(156,220,=
+254)">chatHistory</span><span style=3D"color:rgb(212,212,212)"> =3D [];</sp=
+an></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Function to add =
+message to chat UI</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">fu=
+nction</span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"=
+color:rgb(220,220,170)">addMessage</span><span style=3D"color:rgb(212,212,2=
+12)">(</span><span style=3D"color:rgb(156,220,254)">speaker</span><span sty=
+le=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254=
+)">text</span><span style=3D"color:rgb(212,212,212)">) {</span></div><div><=
+span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(156,220,254)">chatHistory</span><spa=
+n style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(220,220=
+,170)">push</span><span style=3D"color:rgb(212,212,212)">({</span><span sty=
+le=3D"color:rgb(156,220,254)">speaker</span><span style=3D"color:rgb(212,21=
+2,212)">, </span><span style=3D"color:rgb(156,220,254)">text</span><span st=
+yle=3D"color:rgb(212,212,212)">});</span></div><div><span style=3D"color:rg=
+b(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212,21=
+2)"> </span><span style=3D"color:rgb(79,193,255)">chat</span><span style=3D=
+"color:rgb(212,212,212)"> =3D </span><span style=3D"color:rgb(156,220,254)"=
+>document</span><span style=3D"color:rgb(212,212,212)">.</span><span style=
+=3D"color:rgb(220,220,170)">getElementById</span><span style=3D"color:rgb(2=
+12,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;chat&quot=
+;</span><span style=3D"color:rgb(212,212,212)">);</span></div><div><span st=
+yle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </=
+span><span style=3D"color:rgb(86,156,214)">const</span><span style=3D"color=
+:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,255)">messageDiv=
+</span><span style=3D"color:rgb(212,212,212)"> =3D </span><span style=3D"co=
+lor:rgb(156,220,254)">document</span><span style=3D"color:rgb(212,212,212)"=
+>.</span><span style=3D"color:rgb(220,220,170)">createElement</span><span s=
+tyle=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206,145,12=
+0)">&quot;div&quot;</span><span style=3D"color:rgb(212,212,212)">);</span><=
+/div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">messageDiv</=
+span><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rg=
+b(156,220,254)">classList</span><span style=3D"color:rgb(212,212,212)">.</s=
+pan><span style=3D"color:rgb(220,220,170)">add</span><span style=3D"color:r=
+gb(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;messa=
+ge&quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=
+=3D"color:rgb(156,220,254)">speaker</span><span style=3D"color:rgb(212,212,=
+212)">);</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)=
+">messageDiv</span><span style=3D"color:rgb(212,212,212)">.</span><span sty=
+le=3D"color:rgb(156,220,254)">textContent</span><span style=3D"color:rgb(21=
+2,212,212)"> =3D </span><span style=3D"color:rgb(156,220,254)">text</span><=
+span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span=
+ style=3D"color:rgb(79,193,255)">chat</span><span style=3D"color:rgb(212,21=
+2,212)">.</span><span style=3D"color:rgb(220,220,170)">appendChild</span><s=
+pan style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(79,19=
+3,255)">messageDiv</span><span style=3D"color:rgb(212,212,212)">);</span></=
+div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">chat</span><spa=
+n style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(156,220=
+,254)">scrollTop</span><span style=3D"color:rgb(212,212,212)"> =3D </span><=
+span style=3D"color:rgb(79,193,255)">chat</span><span style=3D"color:rgb(21=
+2,212,212)">.</span><span style=3D"color:rgb(156,220,254)">scrollHeight</sp=
+an><span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D=
+"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><br><div=
+><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span>=
+<span style=3D"color:rgb(106,153,85)">// Function to sanitize user input</s=
+pan></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(86,156,214)">function</span><span st=
+yle=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(220,220,170=
+)">sanitizeInput</span><span style=3D"color:rgb(212,212,212)">(</span><span=
+ style=3D"color:rgb(156,220,254)">text</span><span style=3D"color:rgb(212,2=
+12,212)">) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134=
+,192)">return</span><span style=3D"color:rgb(212,212,212)"> </span><span st=
+yle=3D"color:rgb(156,220,254)">text</span><span style=3D"color:rgb(212,212,=
+212)">.</span><span style=3D"color:rgb(220,220,170)">trim</span><span style=
+=3D"color:rgb(212,212,212)">();</span></div><div><span style=3D"color:rgb(2=
+12,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><br><div><span style=
+=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(106,153,85)">// Function for generating bot response synchron=
+ously</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Since we can=
+&#39;t call transformers locally here, </span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"colo=
+r:rgb(106,153,85)">// We&#39;ll simulate conversational responses with some=
+ predefined fallback</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">=
+function</span><span style=3D"color:rgb(212,212,212)"> </span><span style=
+=3D"color:rgb(220,220,170)">generateBotResponse</span><span style=3D"color:=
+rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">userText</=
+span><span style=3D"color:rgb(212,212,212)">) {</span></div><div><span styl=
+e=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </sp=
+an><span style=3D"color:rgb(106,153,85)">// First check dataset</span></div=
+><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 </span><span style=3D"color:rgb(86,156,214)">const</span><spa=
+n style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,=
+255)">datasetRec</span><span style=3D"color:rgb(212,212,212)"> =3D </span><=
+span style=3D"color:rgb(220,220,170)">checkDatasetDisease</span><span style=
+=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">=
+userText</span><span style=3D"color:rgb(212,212,212)">);</span></div><div><=
+span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 </span><span style=3D"color:rgb(197,134,192)">if</span><span style=
+=3D"color:rgb(212,212,212)"> (</span><span style=3D"color:rgb(79,193,255)">=
+datasetRec</span><span style=3D"color:rgb(212,212,212)">) {</span></div><di=
+v><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192)">return<=
+/span><span style=3D"color:rgb(212,212,212)"> </span><span style=3D"color:r=
+gb(206,145,120)">`Bot (Dataset): </span><span style=3D"color:rgb(86,156,214=
+)">${</span><span style=3D"color:rgb(79,193,255)">datasetRec</span><span st=
+yle=3D"color:rgb(86,156,214)">}</span><span style=3D"color:rgb(206,145,120)=
+">`</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><span s=
+tyle=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }=
+</span></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">//=
+ Extract symptoms and recommend OTC</span></div><div><span style=3D"color:r=
+gb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span sty=
+le=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212,2=
+12)"> </span><span style=3D"color:rgb(79,193,255)">symptoms</span><span sty=
+le=3D"color:rgb(212,212,212)"> =3D </span><span style=3D"color:rgb(220,220,=
+170)">extractSymptoms</span><span style=3D"color:rgb(212,212,212)">(</span>=
+<span style=3D"color:rgb(156,220,254)">userText</span><span style=3D"color:=
+rgb(212,212,212)">);</span></div><div><span style=3D"color:rgb(212,212,212)=
+">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb=
+(86,156,214)">const</span><span style=3D"color:rgb(212,212,212)"> </span><s=
+pan style=3D"color:rgb(79,193,255)">otcRec</span><span style=3D"color:rgb(2=
+12,212,212)"> =3D </span><span style=3D"color:rgb(220,220,170)">recommendOT=
+C</span><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color=
+:rgb(79,193,255)">symptoms</span><span style=3D"color:rgb(212,212,212)">);<=
+/span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192)">if</=
+span><span style=3D"color:rgb(212,212,212)"> (</span><span style=3D"color:r=
+gb(79,193,255)">otcRec</span><span style=3D"color:rgb(212,212,212)">) {</sp=
+an></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,=
+192)">return</span><span style=3D"color:rgb(212,212,212)"> </span><span sty=
+le=3D"color:rgb(206,145,120)">`Bot (OTC): </span><span style=3D"color:rgb(8=
+6,156,214)">${</span><span style=3D"color:rgb(79,193,255)">otcRec</span><sp=
+an style=3D"color:rgb(86,156,214)">}</span><span style=3D"color:rgb(206,145=
+,120)">`</span><span style=3D"color:rgb(212,212,212)">;</span></div><div><s=
+pan style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 }</span></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,=
+85)">// Handle thanks / thank you</span></div><div><span style=3D"color:rgb=
+(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(197,134,192)">if</span><span style=3D"color:rgb(212,212,212)"=
+> (</span><span style=3D"color:rgb(209,105,105)">/</span><span style=3D"col=
+or:rgb(220,220,170)">^</span><span style=3D"color:rgb(209,105,105)">thanks<=
+/span><span style=3D"color:rgb(215,186,125)">?</span><span style=3D"color:r=
+gb(220,220,170)">$|</span><span style=3D"color:rgb(209,105,105)">thank you/=
+</span><span style=3D"color:rgb(86,156,214)">i</span><span style=3D"color:r=
+gb(212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">test</span>=
+<span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(156=
+,220,254)">userText</span><span style=3D"color:rgb(212,212,212)">.</span><s=
+pan style=3D"color:rgb(220,220,170)">trim</span><span style=3D"color:rgb(21=
+2,212,212)">())) {</span></div><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(212,212,2=
+12)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Bot: You&#39;re w=
+elcome! Stay safe. =F0=9F=98=8A&quot;</span><span style=3D"color:rgb(212,21=
+2,212)">;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><br><div><span style=3D"co=
+lor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><spa=
+n style=3D"color:rgb(106,153,85)">// Fallback &quot;chatty&quot; response</=
+span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Some =
+simple canned responses for demo:</span></div><div><span style=3D"color:rgb=
+(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=
+=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212,212=
+)"> </span><span style=3D"color:rgb(79,193,255)">lower</span><span style=3D=
+"color:rgb(212,212,212)"> =3D </span><span style=3D"color:rgb(156,220,254)"=
+>userText</span><span style=3D"color:rgb(212,212,212)">.</span><span style=
+=3D"color:rgb(220,220,170)">toLowerCase</span><span style=3D"color:rgb(212,=
+212,212)">();</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,=
+134,192)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><span st=
+yle=3D"color:rgb(79,193,255)">lower</span><span style=3D"color:rgb(212,212,=
+212)">.</span><span style=3D"color:rgb(220,220,170)">includes</span><span s=
+tyle=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206,145,12=
+0)">&quot;hello&quot;</span><span style=3D"color:rgb(212,212,212)">) || </s=
+pan><span style=3D"color:rgb(79,193,255)">lower</span><span style=3D"color:=
+rgb(212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">includes</=
+span><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rg=
+b(206,145,120)">&quot;hi&quot;</span><span style=3D"color:rgb(212,212,212)"=
+>)) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(=
+197,134,192)">return</span><span style=3D"color:rgb(212,212,212)"> </span><=
+span style=3D"color:rgb(206,145,120)">&quot;Bot: Hello! How can I assist yo=
+u today?&quot;</span><span style=3D"color:rgb(212,212,212)">;</span></div><=
+div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134=
+,192)">if</span><span style=3D"color:rgb(212,212,212)"> (</span><span style=
+=3D"color:rgb(79,193,255)">lower</span><span style=3D"color:rgb(212,212,212=
+)">.</span><span style=3D"color:rgb(220,220,170)">includes</span><span styl=
+e=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)"=
+>&quot;help&quot;</span><span style=3D"color:rgb(212,212,212)">) || </span>=
+<span style=3D"color:rgb(79,193,255)">lower</span><span style=3D"color:rgb(=
+212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">includes</span=
+><span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(20=
+6,145,120)">&quot;support&quot;</span><span style=3D"color:rgb(212,212,212)=
+">)) {</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:r=
+gb(197,134,192)">return</span><span style=3D"color:rgb(212,212,212)"> </spa=
+n><span style=3D"color:rgb(206,145,120)">&quot;Bot: Sure, ask me about comm=
+on symptoms or diseases!&quot;</span><span style=3D"color:rgb(212,212,212)"=
+>;</span></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 }</span></div><div><span style=3D"color:rgb(212=
+,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(106,153,85)">// Default fallback</span></div><div><span style=3D"=
+color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><s=
+pan style=3D"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(=
+212,212,212)"> </span><span style=3D"color:rgb(206,145,120)">&quot;Bot: Sor=
+ry, I couldn&#39;t find specific recommendations. Please consult a healthca=
+re professional.&quot;</span><span style=3D"color:rgb(212,212,212)">;</span=
+></div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 }</span></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Event =
+handler for form submit</span></div><div><span style=3D"color:rgb(212,212,2=
+12)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(156,220,25=
+4)">document</span><span style=3D"color:rgb(212,212,212)">.</span><span sty=
+le=3D"color:rgb(220,220,170)">getElementById</span><span style=3D"color:rgb=
+(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;inputFo=
+rm&quot;</span><span style=3D"color:rgb(212,212,212)">).</span><span style=
+=3D"color:rgb(220,220,170)">addEventListener</span><span style=3D"color:rgb=
+(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;submit&=
+quot;</span><span style=3D"color:rgb(212,212,212)">, </span><span style=3D"=
+color:rgb(86,156,214)">function</span><span style=3D"color:rgb(212,212,212)=
+">(</span><span style=3D"color:rgb(156,220,254)">event</span><span style=3D=
+"color:rgb(212,212,212)">) {</span></div><div><span style=3D"color:rgb(212,=
+212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"c=
+olor:rgb(156,220,254)">event</span><span style=3D"color:rgb(212,212,212)">.=
+</span><span style=3D"color:rgb(220,220,170)">preventDefault</span><span st=
+yle=3D"color:rgb(212,212,212)">();</span></div><div><span style=3D"color:rg=
+b(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(86,156,214)">const</span><span style=3D"color:rgb(212,212,21=
+2)"> </span><span style=3D"color:rgb(79,193,255)">inputField</span><span st=
+yle=3D"color:rgb(212,212,212)"> =3D </span><span style=3D"color:rgb(156,220=
+,254)">document</span><span style=3D"color:rgb(212,212,212)">.</span><span =
+style=3D"color:rgb(220,220,170)">getElementById</span><span style=3D"color:=
+rgb(212,212,212)">(</span><span style=3D"color:rgb(206,145,120)">&quot;user=
+Input&quot;</span><span style=3D"color:rgb(212,212,212)">);</span></div><di=
+v><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 </span><span style=3D"color:rgb(86,156,214)">let</span><span style=
+=3D"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(156,220,254)">=
+userText</span><span style=3D"color:rgb(212,212,212)"> =3D </span><span sty=
+le=3D"color:rgb(220,220,170)">sanitizeInput</span><span style=3D"color:rgb(=
+212,212,212)">(</span><span style=3D"color:rgb(79,193,255)">inputField</spa=
+n><span style=3D"color:rgb(212,212,212)">.</span><span style=3D"color:rgb(1=
+56,220,254)">value</span><span style=3D"color:rgb(212,212,212)">);</span></=
+div><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 </span><span style=3D"color:rgb(197,134,192)">if</span><span=
+ style=3D"color:rgb(212,212,212)"> (!</span><span style=3D"color:rgb(156,22=
+0,254)">userText</span><span style=3D"color:rgb(212,212,212)">) </span><spa=
+n style=3D"color:rgb(197,134,192)">return</span><span style=3D"color:rgb(21=
+2,212,212)">;</span></div><br><div><span style=3D"color:rgb(212,212,212)">=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(2=
+20,220,170)">addMessage</span><span style=3D"color:rgb(212,212,212)">(</spa=
+n><span style=3D"color:rgb(206,145,120)">&quot;user&quot;</span><span style=
+=3D"color:rgb(212,212,212)">, </span><span style=3D"color:rgb(156,220,254)"=
+>userText</span><span style=3D"color:rgb(212,212,212)">);</span></div><br><=
+div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 </span><span style=3D"color:rgb(106,153,85)">// Generate bot rep=
+ly (simulated async for better UX)</span></div><div><span style=3D"color:rg=
+b(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span styl=
+e=3D"color:rgb(220,220,170)">setTimeout</span><span style=3D"color:rgb(212,=
+212,212)">(() </span><span style=3D"color:rgb(86,156,214)">=3D&gt;</span><s=
+pan style=3D"color:rgb(212,212,212)"> {</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 </span><span style=3D"color:rgb(86,156,214)">const</span><span style=3D=
+"color:rgb(212,212,212)"> </span><span style=3D"color:rgb(79,193,255)">botR=
+esponse</span><span style=3D"color:rgb(212,212,212)"> =3D </span><span styl=
+e=3D"color:rgb(220,220,170)">generateBotResponse</span><span style=3D"color=
+:rgb(212,212,212)">(</span><span style=3D"color:rgb(156,220,254)">userText<=
+/span><span style=3D"color:rgb(212,212,212)">);</span></div><div><span styl=
+e=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 </span><span style=3D"color:rgb(220,220,170)">addMessage</span><=
+span style=3D"color:rgb(212,212,212)">(</span><span style=3D"color:rgb(206,=
+145,120)">&quot;bot&quot;</span><span style=3D"color:rgb(212,212,212)">, </=
+span><span style=3D"color:rgb(79,193,255)">botResponse</span><span style=3D=
+"color:rgb(212,212,212)">);</span></div><div><span style=3D"color:rgb(212,2=
+12,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 }, </span><span style=3D=
+"color:rgb(181,206,168)">300</span><span style=3D"color:rgb(212,212,212)">)=
+;</span></div><br><div><span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span style=3D"color:rgb(79,193,255)">i=
+nputField</span><span style=3D"color:rgb(212,212,212)">.</span><span style=
+=3D"color:rgb(156,220,254)">value</span><span style=3D"color:rgb(212,212,21=
+2)"> =3D </span><span style=3D"color:rgb(206,145,120)">&quot;&quot;</span><=
+span style=3D"color:rgb(212,212,212)">;</span></div><div><span style=3D"col=
+or:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 </span><span=
+ style=3D"color:rgb(79,193,255)">inputField</span><span style=3D"color:rgb(=
+212,212,212)">.</span><span style=3D"color:rgb(220,220,170)">focus</span><s=
+pan style=3D"color:rgb(212,212,212)">();</span></div><div><span style=3D"co=
+lor:rgb(212,212,212)">=C2=A0 =C2=A0 =C2=A0 =C2=A0 });</span></div><br><div>=
+<span style=3D"color:rgb(212,212,212)">=C2=A0 =C2=A0 </span><span style=3D"=
+color:rgb(128,128,128)">&lt;/</span><span style=3D"color:rgb(86,156,214)">s=
+cript</span><span style=3D"color:rgb(128,128,128)">&gt;</span></div><div><s=
+pan style=3D"color:rgb(128,128,128)">&lt;/</span><span style=3D"color:rgb(8=
+6,156,214)">body</span><span style=3D"color:rgb(128,128,128)">&gt;</span></=
+div><div><span style=3D"color:rgb(128,128,128)">&lt;/</span><span style=3D"=
+color:rgb(86,156,214)">html</span><span style=3D"color:rgb(128,128,128)">&g=
+t;</span></div><br><br></div></div>
+
+--00000000000025aaba06348ef43a--
